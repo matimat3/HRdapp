@@ -10,10 +10,6 @@ pragma solidity >=0.7.0 <0.9.0;
  * @custom:dev-run-script ./scripts/deploy_with_ethers.ts
  */
 contract HRdapp {
-    struct Contract {
-        uint256 salary;
-    }
-
     struct Employee {
         address ethAddress; // where employee is paid
         uint256 salary; // how much is employee paid
