@@ -101,15 +101,17 @@ contract HRdapp {
         return _payToEmployee;
     }
 
-    function approveExpense(address _employeeEthAddress, uint256 _payToEmployee)
+    function approveExpense(address _employeeEthAddress, uint256 _payToEmployee, uint256 _expensePrice)
         public
         payable
         onlyHR
     {
+        _employeeEthAddress.transfer(_payToEmployee);
         // pay wallet that created the expense
     }
 
-    function denyExpense() public onlyHR {
+    function denyExpense(uint256 _expenseId) public onlyHR {
+         delete companyExpenses[_expenseId];
         // close created expense
     }
 
